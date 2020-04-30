@@ -27,10 +27,16 @@ public class OrderManageController {
     @Resource
     private TestService testService;
 
-//    @GetMapping("/getOrder")
-//    public String getOrder() {
-//        return restTemplate.postForObject("http://CLOUD-PAYMENT-SERVICE/getPaymentResult", null, String.class);
-//    }
+    @HystrixCommand
+    @GetMapping("/getPortByLb")
+    public String getPortByLb() {
+        return testService.getPortByLb();
+    }
+    @HystrixCommand
+    @GetMapping("/getOrder")
+    public String getOrder() {
+        return testService.getPort();
+    }
 
     @GetMapping("/paymentInfoTimeout/{id}")
     @HystrixCommand(fallbackMethod = "paymentInfoTimeoutFallbackMethod",commandProperties = {

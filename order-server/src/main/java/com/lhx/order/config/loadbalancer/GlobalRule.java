@@ -6,7 +6,7 @@ import com.netflix.loadbalancer.Server;
 
 import java.util.List;
 
-/**
+/**自定义负载均衡策略
  * @author lhx
  * @description
  * @date 2020/4/26 15:20

@@ -12,6 +12,7 @@
         <module>order-server</module>
         <module>payment-server</module>
         <module>hystrix-dashboard</module>
+        <module>gateway-server</module>
     </modules>
     <name>spring-cloud</name>
     <description>Demo project for Spring Boot</description>

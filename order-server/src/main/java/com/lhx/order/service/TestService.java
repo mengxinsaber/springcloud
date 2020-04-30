@@ -4,7 +4,6 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  * @author lhx
@@ -22,5 +21,11 @@ public interface TestService {
 
     @GetMapping("/paymentInfoTimeout/{id}")
     String paymentInfoTimeout(@PathVariable("id") Integer id);
+
+    @GetMapping("/lb/getPort")
+    String getPortByLb();
+
+    @GetMapping("/payment/getPort")
+    String getPort();
 
 }

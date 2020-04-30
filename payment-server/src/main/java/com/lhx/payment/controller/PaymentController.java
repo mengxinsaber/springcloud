@@ -29,6 +29,17 @@ public class PaymentController {
         return result;
     }
 
+    @GetMapping("/lb/getPort")
+    public String getPort1(HttpServletRequest request) {
+        log.info("*****result: " + request.getServerPort());
+        return String.valueOf(request.getServerPort());
+    }
+    @GetMapping("/payment/getPort")
+    public String getPort2(HttpServletRequest request) {
+        log.info("*****result: " + request.getServerPort());
+        return String.valueOf(request.getServerPort());
+    }
+
     @GetMapping("/paymentInfoTimeout/{id}")
     public String paymentInfoTimeout(@PathVariable("id") Integer id) {
         String result = paymentService.paymentInfoTimeout(id);
